@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2025-07-20 13:56:08.874985",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_zilk",
+  "subject",
+  "column_break_saes",
+  "target_doctype",
+  "column_break_huwb",
+  "target_date_field",
+  "section_break_kjjo",
+  "direction",
+  "column_break_mhex",
+  "days",
+  "column_break_lrva",
+  "enabled",
+  "section_break_qesf",
+  "condition",
+  "column_break_hvmo",
+  "message",
+  "section_break_zwss",
+  "reciver"
+ ],
+ "fields": [
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_saes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_doctype",
+   "fieldtype": "Link",
+   "label": "Target Doctype",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_huwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.target_doctype",
+   "fieldname": "target_date_field",
+   "fieldtype": "Select",
+   "label": "Date Field"
+  },
+  {
+   "fieldname": "section_break_kjjo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "direction",
+   "fieldtype": "Select",
+   "label": "Direction",
+   "options": "Before\nAfter\nsame"
+  },
+  {
+   "fieldname": "column_break_mhex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.direction==(\"After\",\"Before\")",
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days"
+  },
+  {
+   "fieldname": "section_break_qesf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Code",
+   "label": "Condition"
+  },
+  {
+   "fieldname": "column_break_hvmo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "{{ doc.employee_name }} joined on {{ doc.date_of_joining }} ({{ frappe.utils.formatdate(doc.date_of_joining) }})\n",
+   "fieldname": "message",
+   "fieldtype": "Code",
+   "label": "Message",
+   "options": "Jinja"
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "section_break_zwss",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reciver",
+   "fieldtype": "Table",
+   "label": "Reciver",
+   "options": "Notification Recipient"
+  },
+  {
+   "fieldname": "column_break_lrva",
+   "fieldtype": "Column Break",
+   "width": "50px"
+  },
+  {
+   "fieldname": "column_break_zilk",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-21 12:31:53.200663",
+ "modified_by": "Administrator",
+ "module": "Notification Primer",
+ "name": "Notification Mange",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

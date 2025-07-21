@@ -1,0 +1,38 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"NaJ2CPgolK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Notifcation</span>\",\"col\":12}},{\"id\":\"OmojJLlMN1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Notification Mange\",\"col\":3}}]",
+ "creation": "2025-07-21 12:34:16.090990",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "notification",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Notifcation",
+ "links": [],
+ "modified": "2025-07-21 12:39:18.733672",
+ "modified_by": "Administrator",
+ "module": "Notification Primer",
+ "name": "Notifcation",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Notification Mange",
+   "link_to": "Notification Mange",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Notifcation"
+}

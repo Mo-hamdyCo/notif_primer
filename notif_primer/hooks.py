@@ -5,6 +5,26 @@ app_description = "Fix Notification log Sechduler"
 app_email = "mohamedhamdy2539@gmail.com"
 app_license = "mit"
 
+scheduler_events = {
+    "cron": {
+        "* * * * *": [
+            "notif_primer.scripts.trigger_notifications.run"
+        ]
+    }
+}
+fixtures = [
+    {
+        "doctype": "DocType",
+        "filters": [
+            ["name", "in", ["Notification Mange", "Sent Notification Log"]]
+        ]
+    }
+]
+
+
+
+
+
 # Apps
 # ------------------
 

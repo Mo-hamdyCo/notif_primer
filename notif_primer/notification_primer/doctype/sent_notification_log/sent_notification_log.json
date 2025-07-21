@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-16 13:06:04.174082",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "notification_ref",
+  "column_break_gxyn",
+  "recipient",
+  "column_break_cpfl",
+  "sent_on",
+  "section_break_bvfy",
+  "target_doctype",
+  "column_break_shur",
+  "target_docname"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_gxyn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "recipient",
+   "fieldtype": "Data",
+   "label": "Recipient"
+  },
+  {
+   "fieldname": "section_break_bvfy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "target_doctype",
+   "fieldtype": "Link",
+   "label": "Target DocType",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "column_break_shur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_docname",
+   "fieldtype": "Data",
+   "label": "Target DocName"
+  },
+  {
+   "fieldname": "notification_ref",
+   "fieldtype": "Link",
+   "label": "Notification Ref",
+   "options": "Notification Mange"
+  },
+  {
+   "fieldname": "column_break_cpfl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sent_on",
+   "fieldtype": "Datetime",
+   "label": "Sent On"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-16 13:21:04.992331",
+ "modified_by": "Administrator",
+ "module": "Notification Primer",
+ "name": "Sent Notification Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
