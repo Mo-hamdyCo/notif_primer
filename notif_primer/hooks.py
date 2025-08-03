@@ -13,14 +13,15 @@ scheduler_events = {
     }
 }
 fixtures = [
+     
     {
         "doctype": "DocType",
         "filters": [
-            ["name", "in", ["Notification Mange", "Sent Notification Log"]]
+            ["name", "in", ["Notification Mange", "Sent Notification Log","Attendance","Shift Type"]]
         ]
     }
 ]
-
+fixtures = ["Server Script", "Client Script"]
 
 
 

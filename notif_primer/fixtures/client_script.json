@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Client Salary",
+  "enabled": 1,
+  "modified": "2025-07-02 15:39:03.957098",
+  "module": null,
+  "name": "Client Salary",
+  "script": "frappe.ui.form.on('client salary details', {\r\n    num_of_order(frm, cdt, cdn) {\r\n        calculate_salary(cdt, cdn);\r\n    },\r\n    per_order(frm, cdt, cdn) {\r\n        calculate_salary(cdt, cdn);\r\n    },\r\n    margin(frm, cdt, cdn) {\r\n        calculate_salary(cdt, cdn);\r\n    }\r\n});\r\n\r\nfunction calculate_salary(cdt, cdn) {\r\n    let row = locals[cdt][cdn];\r\n\r\n    let num_of_order = parseFloat(row.num_of_order) || 0;\r\n    let per_order = parseFloat(row.per_order) || 0;\r\n    let margin = parseFloat(row.margin) || 0;\r\n\r\n    let salary = num_of_order * (per_order - margin);\r\n\r\n    frappe.model.set_value(cdt, cdn, 'salary', salary);\r\n}\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Customer",
+  "enabled": 1,
+  "modified": "2025-07-13 14:11:45.424516",
+  "module": null,
+  "name": "Activity",
+  "script": "frappe.ui.form.on('Customer', {\r\n    refresh: function(frm) {\r\n        if (frm.doc.docstatus === 1) return;\r\n\r\n        const crm_activities = new erpnext.utils.CRMActivities({\r\n            frm: frm,\r\n            open_activities_wrapper: $(frm.fields_dict.custom_open_activities_html.wrapper),\r\n            all_activities_wrapper: $(frm.fields_dict.custom_all_activities_html.wrapper),\r\n            form_wrapper: $(frm.wrapper),\r\n        });\r\n\r\n        crm_activities.refresh();\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Shift Type",
+  "enabled": 1,
+  "modified": "2025-08-02 12:37:25.250077",
+  "module": "Notification Primer",
+  "name": "Working Hour Shift",
+  "script": "frappe.ui.form.on('Shift Type', {\r\n    validate: function(frm) {\r\n        if (frm.doc.start_time && frm.doc.end_time) {\r\n            let start = moment(frm.doc.start_time, \"HH:mm:ss\");\r\n            let end = moment(frm.doc.end_time, \"HH:mm:ss\");\r\n            let duration = moment.duration(end.diff(start)).asHours();\r\n            frm.set_value(\"custom_working_hours\", parseFloat(duration.toFixed(2)));\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ }
+]
